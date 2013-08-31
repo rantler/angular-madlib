@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Learning AngularJS - MadLibs</title>
+
+		<link href="style.css" rel="stylesheet" />
+	</head>
+
+	<!-- Initialize a new AngularJS app and associate it with a module named "madLib"-->
+	<body ng-app="madLib" ng-controller="MadLibController">
+
+		<div>
+      <span>Enter MadLib Sentence Here:</span>
+			<input class="sentence" type="text" ng-change="findWords()" ng-model="sentence" placeholder="Enter your MadLib sentence here" />
+		</div>
+
+    <div ng-repeat="word in words">
+      <div>
+        <span>Enter substitute for "{{ word }}":<span>
+        <input class="word" type="text" ng-model="replacement" ng-controller="WordController" ng-change="replaceWord(word)" placeholder="Enter word for '_{{ word }}_'' here" />
+      </div>
+    </div>
+
+    <h2 ng-class="resultPresent()">Your MadLib!</h2>
+    <div>{{ result() }}</div>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

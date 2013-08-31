@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; }
+
+body { padding-left: 1em; }
+
+input { margin: 1em; }
+input.sentence { width: 400px; }
+input.word { width: 150px; }
+
+h2 { margin: 1em 0; }
+
+.hidden { display: none; }
